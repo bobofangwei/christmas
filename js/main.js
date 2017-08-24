@@ -54,6 +54,6 @@ $(function() {
             }
         };
     }
-    audio('./music/circulation.mp3', true);
+    audio('./music/circulation.mp3', false);
 
 });

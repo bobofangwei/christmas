@@ -133,10 +133,11 @@
 .boy-deer {
     position: absolute;
     top: 0.1rem;
-    right: 3rem;
+    right: -3rem;
     width: 9.89rem;
     height: 2.69rem;
     background-size: 400% 100%;
     background-image: url(../images/a/boy-sleigh-car.png);
     animation: boyDeerAnim 2s steps(4) infinite;
+    transform: scale(.2);
 }
