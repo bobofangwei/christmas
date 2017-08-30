@@ -19,9 +19,22 @@
                     <div class="window-right"></div>
                 </div>
             </div>
-             <div class="boy-deer boy-walk" id="boyDeer"></div>
+             <div class="boy-deer boy-deer-walk" id="boyDeer"></div>
         </div>
-        <div class="page page-b bg-adaptive" id="pageB"></div>
+        <div class="page page-b bg-adaptive" id="pageB">
+            <div class="boy boy-walk" id="pagebBoy"></div>
+            <div class="cat" id="pagebCat"></div>
+            <div class="girl" id="pagebGirl"></div>
+            <!--旋转木马-->
+            <div class="stage carousel" id="carousel">
+                <div class="container" id="container">
+                    <img class="carousel-item" src="./images/carousel/1.png">
+                    <img class="carousel-item" src="./images/carousel/2.png">
+                    <img class="carousel-item" src="./images/carousel/3.png">
+                </div>
+            </div>
+
+        </div>
         <div class="page page-c bg-adaptive" id="pageC"></div>
     </div>
     <button id="test1">测试按钮1</button>
@@ -29,7 +42,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
     <script type="text/javascript" src="./js/util.js"></script>
+    <script type="text/javascript" src="./js/emitter.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./js/pageA.js"></script>
+    <!--<script type="text/javascript" src="./js/pageA.js"></script>-->
+    <script type="text/javascript" src="./js/pageB.js"></script>
     </body>
 </html>

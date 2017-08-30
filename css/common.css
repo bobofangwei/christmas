@@ -4,57 +4,70 @@
     left: 0;
     z-index: 10000;
 }
+
 #test2 {
     position: absolute;
     top: 0;
     left: 100px;
     z-index: 10000;
 }
+
 .bg-adaptive {
     background-size: 100% 100%;
 }
+
 .container {
     width: 80%;
     position: relative;
     overflow: hidden;
 }
+
 .page {
     position: absolute;
     width: 100%;
-    height: 100%;    
+    height: 100%;
 }
+
 .page-a {
     background-image: url(../images/a/page-a-bg.png);
-    z-index: 100;
+    /*z-index: 100;*/
 }
+
 .page-b {
     background-image: url(../images/b/page-b-bg.png);
     z-index: 10;
 }
+
 .page-c {
     background-image: url(../images/c/page-c-bg.png);
     z-index: 1;
 }
+
 .effect-out {
-    animation: effectOut 8s ease-in-out forwards;
+    animation: effectOut 9s ease-in-out forwards;
     transform-origin: 71% 72%;
 }
+
 .effect-in {
     animation: effectIn 8s ease-in-out forwards;
     transform: scale(8);
     transform-origin: 58.5% 73.5%;
     z-index: 10;
 }
+
+
 /*第一屏到第二屏切换时候的效果*/
+
 @keyframes effectOut {
     0% {
-        opacity:1;
+        opacity: 1;
     }
     100% {
         opacity: 0;
         transform: scale(20);
     }
 }
+
 @keyframes effectIn {
     0% {
         opacity: 0;
@@ -65,7 +78,9 @@
     }
 }
 
+
 /*page-A*/
+
 @keyframes treeBlink {
     0% {
         background-position: 0% 0%;
@@ -74,15 +89,16 @@
         background-position: -200% 0%;
     }
 }
+
 .tree {
     position: absolute;
     width: 2.71rem;
     height: 4.24rem;
     bottom: .5rem;
     left: 1rem;
-    background-image:url(../images/a/trees.png);
+    background-image: url(../images/a/trees.png);
     background-size: 200% 100%;
-    animation: treeBlink 1s steps(2) infinite ;
+    animation: treeBlink 1s steps(2) infinite;
 }
 
 @keyframes moonAnim {
@@ -93,6 +109,7 @@
         box-shadow: 0 0 1rem #FCF0BC;
     }
 }
+
 .moon {
     position: absolute;
     left: 3.3rem;
@@ -104,6 +121,7 @@
     box-shadow: 0 0 1.5rem #FCF0BC;
     animation: moonAnim 1.3s infinite linear alternate;
 }
+
 @keyframes cloudyAnim {
     0% {
         transform: translateY(-.5rem);
@@ -112,17 +130,19 @@
         transform: translateY(1rem);
     }
 }
+
 .cloudy {
     position: absolute;
     top: 1.8rem;
     left: .5rem;
     width: 1rem;
     height: 1rem;
-    border-radius:50%;
+    border-radius: 50%;
     background-color: #60768D;
-    box-shadow: #60768D 1.2rem -0.2rem 0 -0.1rem, #60768D 0.5rem -0.5rem, #60768D 0.8rem 0.2rem,#60768D 1.5rem 0.2rem 0 -0.2rem;
+    box-shadow: #60768D 1.2rem -0.2rem 0 -0.1rem, #60768D 0.5rem -0.5rem, #60768D 0.8rem 0.2rem, #60768D 1.5rem 0.2rem 0 -0.2rem;
     animation: cloudyAnim 2s linear infinite alternate;
 }
+
 @keyframes boyDeerAnim {
     0% {
         background-position: 0% 0%;
@@ -131,6 +151,7 @@
         background-position: 133% 0%;
     }
 }
+
 .boy-deer {
     position: absolute;
     top: 0.1rem;
@@ -141,8 +162,9 @@
     background-image: url(../images/a/boy-sleigh-car.png);
     background-position: 100% 0;
 }
-.boy-walk {
-   animation: boyDeerAnim 2s steps(4) infinite; 
+
+.boy-deer-walk {
+    animation: boyDeerAnim 2s steps(4) infinite;
 }
 
 .window {
@@ -152,19 +174,21 @@
     width: 2.41rem;
     height: 1.61rem;
 }
-.window-content{
+
+.window-content {
     width: 2.27rem;
     height: 1.35rem;
     background-size: 100% 100%;
     margin: 0 auto;
-    background-image:url(../images/a/page-a-window-bg.png);
+    background-image: url(../images/a/page-a-window-bg.png);
     overflow: hidden;
     perspective: 5rem;
     transform-style: preserve-3d;
     backface-visibility: hidden;
 }
-.window:before{
-    content:'';
+
+.window:before {
+    content: '';
     position: absolute;
     bottom: 0.09rem;
     left: 0;
@@ -173,8 +197,9 @@
     background-image: url(../images/a/window-bottom.png);
     background-size: 100% 100%;
 }
-.window:after{
-    content:'';
+
+.window:after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -183,17 +208,19 @@
     background-image: url(../images/a/window-bottom-shadow.png);
     background-size: 100% 100%;
 }
+
 .window-left {
     width: 50%;
     height: 100%;
     background-size: 100% 100%;
     background-image: url(../images/a/window-left.png);
-    float:left;
+    float: left;
     /*transform: rotateY(60deg);*/
     transform-origin: 0 50%;
 }
+
 .window-right {
-    float:right;
+    float: right;
     width: 50%;
     height: 100%;
     background-size: 100% 100%;
@@ -201,3 +228,141 @@
     /*transform: rotateY(-60deg);*/
     transform-origin: 100% 50%;
 }
+
+
+/*pageB*/
+
+.boy {
+    position: absolute;
+    width: 3.50rem;
+    height: 4.07rem;
+    bottom: 2rem;
+    right: -3.5rem;
+    background-size: 1500% 100%;
+    background-image: url(../images/b/boy.png);
+}
+
+.boy-walk {
+    animation: boyWalk 800ms steps(4) infinite forwards;
+}
+
+@keyframes boyWalk {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 28.57% 0%;
+    }
+}
+/* 小男孩拆包裹 */
+.boy-unwrap {
+    -webkit-animation: boyUnwrap 1200ms steps(3,end)   forwards;
+    -o-animation: boyUnwrap 1200ms steps(3,end)   forwards;
+    animation: boyUnwrap 1200ms steps(3,end)   forwards;
+}
+@keyframes boyUnwrap {
+    0% {
+        background-position: 28.57% 0%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+.girl {
+    position: absolute;
+    width: 3.50rem;
+    height: 4.07rem;
+    background-size: 2100% 100%;
+    background-image: url(../images/b/girl.png);
+    bottom: 4rem;
+    left: 2rem;
+}
+
+/*执行一次*/
+.girl-standup {
+    -webkit-animation: girlStandup 800ms steps(4, end) forwards;
+    -o-animation: girlStandup 800ms steps(4, end) forwards;
+    animation: girlStandup 800ms steps(4, end) forwards;
+}
+@keyframes girlStandup {
+    0% {
+        background-position: 0% 0%;
+        bottom: 4rem;
+        left: 2rem;
+    }
+    100% {
+       background-position: 20% 0%; 
+       bottom: 2.2rem;
+       left: 2.2rem;
+    }
+}
+/*执行1次*/
+.girl-throwbook {
+    -webkit-animation: girlThrowbook 600ms steps(2,end)   forwards;
+    -o-animation: girlThrowbook 600ms steps(2,end)   forwards;
+    animation: girlThrowbook 600ms steps(2,end)   forwards;
+}
+
+@keyframes girlThrowbook {
+  0% {
+        background-position: 20% 0;
+        left: 2.2rem;
+        bottom: 2.2rem;
+    }
+    100% {
+        background-position: 30% 0;
+        left: 2.5rem;
+        bottom: 2.2rem;
+    }
+}
+/*重复执行*/
+.girl-walk {
+    -webkit-animation: girlWalk 1000ms steps(4,end)   infinite;
+    -o-animation: girlWalk 1000ms steps(4,end)   infinite;
+    animation: girlWalk 1000ms steps(4,end)   infinite;
+    left: 2.5rem;
+    bottom: 2.2rem;
+}
+@keyframes girlWalk {
+    0% {
+        background-position: 30% 0;
+    }
+    100% {
+        background-position: 50% 0;
+    }
+}
+
+.cat {
+    position: absolute;
+    width: 1.36rem;
+    height: 0.88rem;
+    bottom: 4.7rem;
+    left: 5rem;
+    background-size: 100% 100%;
+    background-image: url(../images/b/cat.png);
+}
+
+.cat-book {
+    background-image: url(../images/b/cat-book.png);
+}
+
+/*3d轮播*/
+.carousel {
+    width: rem;
+    height: ;
+}
+.stage {
+    perspective: 10rem;
+}
+.carousel {
+    position: absolute;
+    width:4.10rem ;
+    height: 2.60rem;
+    top: 4rem;
+    left: 8.7rem;
+    overflow: hidden;
+ }
+ .carousel-item {
+    width:4.10rem;
+    height: 2.60rem;
+ }
