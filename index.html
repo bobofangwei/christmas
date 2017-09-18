@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>圣诞情缘</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
+
 <body>
     <div class="container" id="container">
         <div class="page page-a bg-adaptive" id="pageA">
@@ -19,23 +22,34 @@
                     <div class="window-right"></div>
                 </div>
             </div>
-             <div class="boy-deer boy-deer-walk" id="boyDeer"></div>
+            <div class="boy-deer boy-deer-walk" id="boyDeer"></div>
         </div>
         <div class="page page-b bg-adaptive" id="pageB">
+            <div class="boy-head" id="boyHead"></div>
             <div class="boy boy-walk" id="pagebBoy"></div>
             <div class="cat" id="pagebCat"></div>
             <div class="girl" id="pagebGirl"></div>
             <!--旋转木马-->
             <div class="stage carousel" id="carousel">
-                <div class="container" id="container">
-                    <img class="carousel-item" src="./images/carousel/1.png">
-                    <img class="carousel-item" src="./images/carousel/2.png">
-                    <img class="carousel-item" src="./images/carousel/3.png">
+                <div class="stage-container" id="stage-container">
                 </div>
             </div>
-
         </div>
-        <div class="page page-c bg-adaptive" id="pageC"></div>
+        <div class="page page-c bg-adaptive" id="pageC">
+            <div class="tree"></div>
+            <div class="moon"></div>
+            <div class="cloudy"></div>
+            <div class="window">
+                <div class="window-bg"></div>
+                <div class="window-content">
+                    <div class="window-left"></div>
+                    <div class="window-right"></div>
+                    <div class="shadow" id="shadow"></div>
+                </div>
+            </div>
+            <div class="deer" id="deer"></div>
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
     <button id="test1">测试按钮1</button>
     <button id="test2">测试按钮2</button>
@@ -46,5 +60,8 @@
     <script type="text/javascript" src="./js/main.js"></script>
     <!--<script type="text/javascript" src="./js/pageA.js"></script>-->
     <script type="text/javascript" src="./js/pageB.js"></script>
-    </body>
+    <script type="text/javascript" src="./js/pageC.js"></script>
+    <script type="text/javascript" src="./js/carousel.js"></script>
+</body>
+
 </html>

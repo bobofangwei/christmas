@@ -30,17 +30,17 @@
 
 .page-a {
     background-image: url(../images/a/page-a-bg.png);
-    /*z-index: 100;*/
+    z-index: 1;
 }
 
 .page-b {
     background-image: url(../images/b/page-b-bg.png);
-    z-index: 10;
+    z-index: 1;
 }
 
 .page-c {
     background-image: url(../images/c/page-c-bg.png);
-    z-index: 1;
+    z-index: 10;
 }
 
 .effect-out {
@@ -54,6 +54,13 @@
     transform-origin: 58.5% 73.5%;
     z-index: 10;
 }
+
+
+
+
+
+
+
 
 
 /*第一屏到第二屏切换时候的效果*/
@@ -77,6 +84,13 @@
         transform: scale(1);
     }
 }
+
+
+
+
+
+
+
 
 
 /*page-A*/
@@ -152,7 +166,7 @@
     }
 }
 
-.boy-deer {
+.page-a .boy-deer {
     position: absolute;
     top: 0.1rem;
     right: -7rem;
@@ -163,11 +177,11 @@
     background-position: 100% 0;
 }
 
-.boy-deer-walk {
+.page-a .boy-deer-walk {
     animation: boyDeerAnim 2s steps(4) infinite;
 }
 
-.window {
+.page-a .window {
     position: absolute;
     top: 8rem;
     right: 5.6rem;
@@ -230,16 +244,35 @@
 }
 
 
+
+
+
+
+
+
+
 /*pageB*/
 
 .boy {
     position: absolute;
     width: 3.50rem;
     height: 4.07rem;
-    bottom: 2rem;
-    right: -3.5rem;
+    bottom: 2.2rem;
+    right: -3rem;
     background-size: 1500% 100%;
     background-image: url(../images/b/boy.png);
+}
+
+.boy-head {
+    position: absolute;
+    width: 3.50rem;
+    height: 4.07rem;
+    right: 7.5rem;
+    bottom: 2.2rem;
+    z-index: 1000;
+    background-image: url(../images/b/boy.png);
+    background-size: 1500% 100%;
+    background-position: 100% 0%;
 }
 
 .boy-walk {
@@ -254,20 +287,97 @@
         background-position: 28.57% 0%;
     }
 }
+
+
+
+
+
+
+
+
 /* 小男孩拆包裹 */
+
 .boy-unwrap {
-    -webkit-animation: boyUnwrap 1200ms steps(3,end)   forwards;
-    -o-animation: boyUnwrap 1200ms steps(3,end)   forwards;
-    animation: boyUnwrap 1200ms steps(3,end)   forwards;
+    -webkit-animation: boyUnwrap 1000ms steps(2, end) forwards;
+    -o-animation: boyUnwrap 1000ms steps(2, end) forwards;
+    animation: boyUnwrap 1000ms steps(2, end) forwards;
 }
+
 @keyframes boyUnwrap {
     0% {
         background-position: 28.57% 0%;
     }
     100% {
-        background-position: 50% 0%;
+        background-position: 42.86% 0%;
     }
 }
+
+.boy-undress1 {
+    -webkit-animation: boyUndress1 400ms steps(2, end) forwards;
+    -o-animation: boyUndress1 400ms steps(2, end) forwards;
+    animation: boyUndress1 400ms steps(2, end) forwards;
+}
+
+@keyframes boyUndress1 {
+    0% {
+        background-position: 42.86% 0%;
+    }
+    100% {
+        background-position: 57.14% 0%;
+    }
+}
+
+.boy-undress2 {
+    -webkit-animation: boyUndress2 200ms steps(1, end) forwards;
+    -o-animation: boyUndress2 200ms steps(1, end) forwards;
+    animation: boyUndress2 200ms steps(1, end) forwards;
+}
+
+@keyframes boyUndress2 {
+    0% {
+        background-position: 57.14% 0%;
+    }
+    100% {
+        background-position: 64.29% 0%;
+    }
+}
+
+.boy-undress3 {
+    -webkit-animation: boyUndress3 200ms steps(1, end) forwards;
+    -o-animation: boyUndress3 200ms steps(1, end) forwards;
+    animation: boyUndress3 200ms steps(1, end) forwards;
+}
+
+@keyframes boyUndress3 {
+    0% {
+        background-position: 64.29% 0%;
+    }
+    100% {
+        background-position: 71.43% 0%;
+    }
+}
+
+.boy-hug {
+    -webkit-animation: boyHug 900ms steps(3, end) forwards;
+    -o-animation: boyHug 900ms steps(3, end) forwards;
+    animation: boyHug 900ms steps(3, end) forwards;
+}
+
+@keyframes boyHug {
+    0% {
+        background-position: 71.43% 0%;
+    }
+    100% {
+        background-position: 92.86% 0%;
+        right: '7.5rem';
+    }
+}
+
+.endPosition {
+    right: '7rem' !important;
+    background-position: '71.43% 0%' !important
+}
+
 .girl {
     position: absolute;
     width: 3.50rem;
@@ -278,57 +388,144 @@
     left: 2rem;
 }
 
+
+
+
+
+
+
+
 /*执行一次*/
+
 .girl-standup {
-    -webkit-animation: girlStandup 800ms steps(4, end) forwards;
-    -o-animation: girlStandup 800ms steps(4, end) forwards;
-    animation: girlStandup 800ms steps(4, end) forwards;
+    -webkit-animation: girlStandup 1200ms steps(4, end) forwards;
+    -o-animation: girlStandup 1200ms steps(4, end) forwards;
+    animation: girlStandup 1200ms steps(4, end) forwards;
 }
+
 @keyframes girlStandup {
     0% {
         background-position: 0% 0%;
-        bottom: 4rem;
-        left: 2rem;
     }
     100% {
-       background-position: 20% 0%; 
-       bottom: 2.2rem;
-       left: 2.2rem;
+        background-position: 20% 0%;
+        bottom: 2.4rem;
+        left: 2.4rem;
     }
 }
+
+
+
+
+
+
+
+
 /*执行1次*/
+
 .girl-throwbook {
-    -webkit-animation: girlThrowbook 600ms steps(2,end)   forwards;
-    -o-animation: girlThrowbook 600ms steps(2,end)   forwards;
-    animation: girlThrowbook 600ms steps(2,end)   forwards;
+    -webkit-animation: girlThrowbook 300ms steps(1, end) forwards;
+    -o-animation: girlThrowbook 300ms steps(1, end) forwards;
+    animation: girlThrowbook 300ms steps(1, end) forwards;
 }
 
 @keyframes girlThrowbook {
-  0% {
+    0% {
         background-position: 20% 0;
         left: 2.2rem;
         bottom: 2.2rem;
     }
     100% {
-        background-position: 30% 0;
-        left: 2.5rem;
-        bottom: 2.2rem;
+        background-position: 25% 0;
+        left: 2.3rem;
+        bottom: 2rem;
     }
 }
+
+
+
+
+
+
+
+
 /*重复执行*/
+
 .girl-walk {
-    -webkit-animation: girlWalk 1000ms steps(4,end)   infinite;
-    -o-animation: girlWalk 1000ms steps(4,end)   infinite;
-    animation: girlWalk 1000ms steps(4,end)   infinite;
-    left: 2.5rem;
-    bottom: 2.2rem;
+    -webkit-animation: girlWalk 800ms steps(4, end) infinite;
+    -o-animation: girlWalk 800ms steps(4, end) infinite;
+    animation: girlWalk 800ms steps(4, end) infinite;
+    left: 2.3rem;
+    bottom: 2rem;
 }
+
 @keyframes girlWalk {
     0% {
         background-position: 30% 0;
     }
     100% {
         background-position: 50% 0;
+    }
+}
+
+.girl-handup {
+    -webkit-animation: girlHandup 800ms steps(2, end) forwards;
+    -o-animation: girlHandup 800ms steps(2, end) forwards;
+    animation: girlHandup 800ms steps(2, end) forwards;
+}
+
+@keyframes girlHandup {
+    0% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: 60% 0;
+    }
+}
+
+.girl-handdown {
+    -webkit-animation: girlHanddown 400ms steps(2, end) forwards;
+    -o-animation: girlHanddown 400ms steps(2, end) forwards;
+    animation: girlHanddown 400ms steps(2, end) forwards;
+}
+
+@keyframes girlHanddown {
+    0% {
+        background-position: 60% 0;
+    }
+    100% {
+        background-position: 50% 0;
+    }
+}
+
+.girl-gohug {
+    -webkit-animation: girlGoHug 600ms steps(4, end) infinite;
+    -o-animation: girlGoHug 600ms steps(4, end) infinite;
+    animation: girlGoHug 600ms steps(4, end) infinite;
+}
+
+@keyframes girlGoHug {
+    0% {
+        background-position: 65% 0;
+    }
+    100% {
+        background-position: 85% 0;
+    }
+}
+
+.girl-hug {
+    -webkit-animation: girlHug 900ms steps(3, end) forwards;
+    -o-animation: girlHug 900ms steps(3, end) forwards;
+    animation: girlHug 900ms steps(3, end) forwards;
+}
+
+@keyframes girlHug {
+    0% {
+        background-position: 85% 0;
+    }
+    100% {
+        background-position: 100% 0;
+        left: '11rem';
     }
 }
 
@@ -346,23 +543,107 @@
     background-image: url(../images/b/cat-book.png);
 }
 
+
+
+
+
+
+
+
 /*3d轮播*/
-.carousel {
-    width: rem;
-    height: ;
-}
-.stage {
-    perspective: 10rem;
-}
+
 .carousel {
     position: absolute;
-    width:4.10rem ;
-    height: 2.60rem;
-    top: 4rem;
-    left: 8.7rem;
+    width: 2.01rem;
+    height: 1.274rem;
+    top: 6rem;
+    left: 9rem;
     overflow: hidden;
- }
- .carousel-item {
-    width:4.10rem;
-    height: 2.60rem;
- }
+}
+
+
+
+/**pageC**/
+
+.page-c .window {
+    position: absolute;
+    top: 8.3rem;
+    right: 7.6rem;
+    width: 2.41rem;
+    height: 1.61rem;
+}
+
+.page-c .window-content {
+    background: url(../images/c/window-scene-bg.png);
+    background-size: 100% 100%;
+}
+
+
+
+.page-c .window-left {
+    transform: rotateY(60deg);
+}
+
+.page-c .window-right {
+    transform: rotateY(-60deg);
+}
+.page-c .window-left.close {
+    -webkit-animation: windowLeftClose 3500ms forwards;
+    -o-animation: windowLeftClose 3500ms forwards;
+    animation: windowLeftClose 3500ms forwards;
+}
+.page-c .window-right.close {
+    -webkit-animation: windowRightClose 3500ms forwards;
+    -o-animation: windowRightClose 3500ms forwards;
+    animation: windowRightClose 3500ms forwards;
+}
+@keyframes windowLeftClose {
+    0% {
+        transform: rotateY(60deg);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
+@keyframes windowRightClose {
+    0% {
+        transform: rotateY(-60deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.page-c .shadow {
+    width: 0.81rem;
+    height: 0.81rem;
+    position: absolute;
+    bottom: 0;
+    left: 0.75rem;
+    background-image: url(../images/c/window-close-bg.png);
+    background-size: 100% 100%;
+    opacity: 0;
+}
+.page-c .deer {
+   width: 7.49rem;
+   height: 2.68rem;
+   position: absolute;
+   background-image: url(../images/c/deer.png); 
+   background-size: 400% 100%;
+   background-position: 100% 0%;
+   right: 4rem;
+   bottom: 1rem;
+}
+.deer-walk {
+    -webkit-animation: deerWalk 900ms steps(3,end)  infinite;
+    -o-animation: deerWalk 900ms steps(3,end)  infinite;
+    animation: deerWalk 900ms steps(3,end)  infinite;
+}
+@keyframes deerWalk {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}

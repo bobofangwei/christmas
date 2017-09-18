@@ -1,6 +1,6 @@
 // 一些常见的工具函数
-$.fn.center=function(){
-    $this=$(this);
+$.fn.center = function() {
+    $this = $(this);
     var screenWidth = $(window).width();
     var screenHeight = $(window).height();
     var selfWidth = $this.width();
@@ -11,3 +11,10 @@ $.fn.center=function(){
         top: screenHeight / 2 - selfHeight / 2 + scrollTop
     });
 }
+var delay = function(time) {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve();
+        }, time);
+    });
+};
