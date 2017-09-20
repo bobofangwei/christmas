@@ -90,7 +90,7 @@ var pageBAnimPlay = (function() {
                 left: '10.3rem',
                 bottom: '2.2rem'
             }, {
-                duration: '3000'
+                duration: '2000'
             }).then(function() {
                 $girl.removeClass('girl-gohug').css({
                     'backgroundPosition': '85% 0'

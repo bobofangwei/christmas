@@ -36,7 +36,7 @@
 }
 
 .effect-in {
-    animation: effectIn 8s ease-in-out forwards;
+    animation: effectIn 6s ease-in-out forwards;
     transform: scale(8);
     transform-origin: 58.5% 73.5%;
     z-index: 10;
@@ -553,14 +553,14 @@
     transform: rotateY(-60deg);
 }
 .page-c .window-left.close {
-    -webkit-animation: windowLeftClose 3500ms forwards;
-    -o-animation: windowLeftClose 3500ms forwards;
-    animation: windowLeftClose 3500ms forwards;
+    -webkit-animation: windowLeftClose 2500ms forwards;
+    -o-animation: windowLeftClose 2500ms forwards;
+    animation: windowLeftClose 2500ms forwards;
 }
 .page-c .window-right.close {
-    -webkit-animation: windowRightClose 3500ms forwards;
-    -o-animation: windowRightClose 3500ms forwards;
-    animation: windowRightClose 3500ms forwards;
+    -webkit-animation: windowRightClose 2500ms forwards;
+    -o-animation: windowRightClose 2500ms forwards;
+    animation: windowRightClose 2500ms forwards;
 }
 @keyframes windowLeftClose {
     0% {

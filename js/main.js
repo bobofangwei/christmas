@@ -37,7 +37,7 @@
          }
      };
  }
- audio('./music/scene.mp3', true);
+ audio('./music/scene.mp3', false);
 
  // 仅保留元素的第一个类
  // 如'boy boy-walk boy-a'处理后为boy
