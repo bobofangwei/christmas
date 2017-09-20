@@ -19,7 +19,7 @@ var pageBAnimPlay = (function() {
             return $.Velocity.animate($boy, {
                 right: '7rem'
             }, {
-                duration: '8000'
+                duration: '7000'
             }).then(function() {
                 $boy.removeClass('boy-walk').css({
                     'backgroundPosition': '28.57% 0'
