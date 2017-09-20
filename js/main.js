@@ -5,7 +5,7 @@
  $pageB = $('#pageB');
  $pageC = $('#pageC');
 
- var config; // 记录屏幕尺寸，在雪花绘制环节有用
+ var config = {}; // 记录屏幕尺寸，在雪花绘制环节有用
  // 每次resize事件，都需要重新调整图片容器的长宽比，并再次居中
  var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
  var resizeHandler = function() {
@@ -47,10 +47,17 @@
  // //执行页面切换
  // //添加一些动画相关类，并在动画执行完毕时，执行对应的回调
  // 基于animation实现动画
- var addEffect = function($elem, effect, callback) {
+ var addEffect = function($elem, effect, reset, callback) {
      return new Promise(function(resolve, reject) {
+         if (reset && typeof reset === 'function') {
+             callback = reset;
+             reset = true;
+         }
          // 将上一个动画类删除
-         resetClass($elem);
+         if (reset !== false) {
+             resetClass($elem);
+         }
+
          $elem.addClass(effect).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
              callback && callback();
              resolve();
@@ -68,14 +75,22 @@
          $(selector).velocity(props, options);
      });
  };
-
- // var emitter = Object.create(Emitter);
- // emitter.init();
- // emitter.subscribe('pageAEnd', function() {
- //     //开启切换动画
- //     console.log('pageAEnd');
- //     addEffect($pageA, 'effect-out');
- // });
- // emitter.subscribe('pageBEnd', function() {
-
- // });
+ pageAAnimPlay();
+ var emitter = Object.create(Emitter);
+ emitter.init();
+ emitter.subscribe('pageAEnd', function() {
+     // 开启切换动画
+     console.log('pageAEnd');
+     // A页面退出，并且开始执行B页面的动画函数
+     addEffect($pageA, 'effect-out', false).then(function() {
+         // 开始执行B页面的动画
+         pageBAnimPlay();
+     });
+ });
+ emitter.subscribe('pageBEnd', function() {
+     console.log('pageBEnd');
+     addEffect($pageC, 'effect-in', false).then(function() {
+         // 开始执行C页面的动画
+         pageCAnimPlay();
+     });
+ });

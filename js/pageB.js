@@ -1,4 +1,4 @@
-$(function() {
+var pageBAnimPlay = (function() {
 
     var $boy = $('#pagebBoy');
     var $girl = $('#pagebGirl');
@@ -109,6 +109,7 @@ $(function() {
             return addEffect($cat, 'cat-book');
         }
     };
+
     function pageBAnimPlay() {
         return boy.walk().then(function() {
             return girl.standup();
@@ -157,5 +158,5 @@ $(function() {
             emitter.trigger('pageBEnd');
         });
     }
-
-});
+    return pageBAnimPlay;
+})();

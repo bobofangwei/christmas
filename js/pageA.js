@@ -1,4 +1,4 @@
-$(function() {
+var pageAAnimPlay = (function() {
     // 开窗的动画处理
     function openWindow() {
         var openLeft = animPromise('.page-a .window-left', { 'rotateY': '60deg' }, { 'duration': '2000' });
@@ -28,11 +28,12 @@ $(function() {
             }, {
                 'duration': '6600',
                 'complete': function(elem) {
-                    $(elem).removeClass('boy-walk');
+                    $('#boyDeer').removeClass('boy-deer-walk');
                     openWindow().then(function() {
                         emitter.trigger('pageAEnd');
                     });
                 }
             });
     }
-});
+    return pageAAnimPlay;
+})();

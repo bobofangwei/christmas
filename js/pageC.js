@@ -1,4 +1,4 @@
-$(function() {
+var pageCAnimPlay = (function() {
     var $windowLeft = $('.page-c .window-left');
     var $windowRight = $('.page-c .window-right');
     var $deer = $('#deer');
@@ -16,9 +16,9 @@ $(function() {
         return Promise.all([closeLeft, closeRight, shadowPromise]);
     }
     // 关闭窗户的同时，出现阴影
-    function pageCAnimPlay() {
+    function pageCAnim() {
         return closeWindow().then(function() {
-            console.log('window');
+            // console.log('window');
         });
     }
 
@@ -53,8 +53,12 @@ $(function() {
         });
 
     }
-    pageCAnimPlay().then(function() {
-        // 与此同时，开始飘雪花，使用canvas实现
-        sledAnimPlay();
-    });
-});
+    return function() {
+        closeWindow().then(function() {
+            // 与此同时，开始飘雪花，使用canvas实现
+            snowFlake.init('canvas');
+            snowFlake.render();
+            return sledAnimPlay();
+        });
+    };
+})();
