@@ -15,13 +15,6 @@ var pageCAnimPlay = (function() {
         });
         return Promise.all([closeLeft, closeRight, shadowPromise]);
     }
-    // 关闭窗户的同时，出现阴影
-    function pageCAnim() {
-        return closeWindow().then(function() {
-            // console.log('window');
-        });
-    }
-
     // 雪橇的运动
     function sledAnimPlay() {
         return new Promise(function(resolve, reject) {
